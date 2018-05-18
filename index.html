@@ -17,70 +17,16 @@
 
 	<h1>Google Maps Testing</h1>
 	<div id="map" class="ba-map"></div>
-	<div class="infoWindow-content" style="display: none">
-		<h3>My Location is very nice city Ivano-Frankivsk</h3>
-	</div>
-	<div class="infoWindow-content2" style="display: none">
-		<h3>I was here!</h3>
-	</div>
-	<script>
-		var map;
-		var infoWindowContent = $('.infoWindow-content').html();
-		var infoWindowContent2 = $('.infoWindow-content2').html();
-		var centerMap = {lat: 48.97, lng: 24.644};
-		var centerMap2 = {lat: 50.27, lng: 33.644};
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: centerMap,
-          zoom: 6
-        });
-        var marker = new google.maps.Marker({
-            position: centerMap,
-            map: map,
-            title: 'Hello World!',
-            icon: 'favicon.png'
+  <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 48.397, lng: 24.644},
+            zoom: 8
           });
-        var marker2 = new google.maps.Marker({
-            position: centerMap2,
-            map: map,
-            title: 'Hello World!',
-            icon: 'favicon.png'
-          });
-        var infowindow = new google.maps.InfoWindow({
-            content: infoWindowContent,
-            maxWidth : 100
-          });
-        var infowindow2 = new google.maps.InfoWindow({
-            content: infoWindowContent2,
-            maxWidth : 100
-          });
-
-        infowindow.open(map, marker);
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-          });
-        infowindow2.open(map, marker2);
-        marker.addListener('click', function() {
-            infowindow2.open(map, marker2);
-          });
-
-        google.maps.event.addDomListener(window, 'resize', function(){
-        	var center = map.getCenter();
-        	google.maps.event.trigger(map, 'resize');
-        	map.setCenter(center);
-        })
-      }
-
-
-
-	  </script>
-	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNIlxHJDrkfwwG6vNzAIsebnhoaRYt7v0&callback=initMap"
-    async defer></script>
-
-
-	  <!-- <script async src="https://http://maps.googleapis.com/"></script> -->
-
-	<!--   <script src="js/main.js"></script> -->
-
+        }
+  </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNIlxHJDrkfwwG6vNzAIsebnhoaRYt7v0&callback=initMap"
+     async defer></script>
 </body>
 </html>

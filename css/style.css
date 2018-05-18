@@ -1,8 +1,8 @@
 body{
 
 }
-.ba-map {
-	height: 500px;
+#map {
+	height: 450px;
 }
 /* Layout */
 .ba-container{
